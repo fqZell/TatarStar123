@@ -39,7 +39,8 @@ const swiper = ()  => {
         spaceBetween: 30,
         centeredSlides: true,
         autoplay: {
-          delay: 2500,
+        //   delay: 2500,
+          delay: 250000000000,
           disableOnInteraction: false,
         },
         pagination: {
@@ -56,15 +57,20 @@ const swiper = ()  => {
 const headerBcc = () => {
 
     const headerEl = document.querySelector("header")
+    const headerIcons = document.querySelector(".fa-basket-shopping")
     
-    if (!headerEl) return false
+    if (!headerEl || !headerIcons) return false
 
     window.addEventListener("scroll", () => {
 
-        if (window.scrollY > window.innerHeight/2) {
+        if (window.scrollY > window.innerHeight/6) {
             headerEl.style.backgroundColor = "#828282"
+            headerEl.style.color = "#333333"
+            headerIcons.style.color = "#333333"
         } else {
             headerEl.style.backgroundColor = "transparent"
+            headerEl.style.color = "#000000"
+            headerIcons.style.color = "#333333"
         }
 
     })
